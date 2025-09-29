@@ -47,7 +47,6 @@ def ConsultarVeiculo(placa,renavam,cidade,estado, proprietario, centroCusto = No
             return
     except:
         print("Elemento de validação não encontrado, seguindo o fluxo normal...")
-        print(f"codigo de placa dentro do consultar veiculo {placa}")
         textoMultas = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-title="Veículo - Emissão de multas"]'))
             )
@@ -60,7 +59,6 @@ def ConsultarVeiculo(placa,renavam,cidade,estado, proprietario, centroCusto = No
             time.sleep(1)
             resultado = driver.find_element(By.CSS_SELECTOR,'div[data-title="Veículo - Emissão de multas"]').text
             time.sleep(1)
-            print(f"numero da placa antes de getMultaInfo{placa}")
             getMultaInfo(placa,renavam,resultado,cidade, estado, proprietario, centroCusto, int(qttdMultas[0]))
             time.sleep(1)
         else:
@@ -71,7 +69,6 @@ def ConsultarVeiculo(placa,renavam,cidade,estado, proprietario, centroCusto = No
 
 #FUNÇÃO PARA PUXAR OS DADOS DO VEÍCULO, OBSERVE QUE ESSA FUNÇÃO APENAS PEGA OS DADOS QUE JÁ VEM DA BASE DE VEÍCULOS
 def getVeiculoInfo(dataDeRegistro, placa, renavam,resultado, cidade, estado, proprietario, centroCusto, qttdMultas):
-    print(f"codigo de placa dentro de getVeiculoInfo {placa}")
 
     dadosGeraisDeVeiculos = pd.DataFrame(
         {
@@ -92,7 +89,6 @@ def getVeiculoInfo(dataDeRegistro, placa, renavam,resultado, cidade, estado, pro
 
 #FUNÇÃO PEGAR AS MULTAS
 def getMultaInfo(placa, renavam, resultado, cidade, estado, proprietario, centroCusto, qttdMultas):
-    print(f"placa dentro de getMultaInfo: {placa}")
     time.sleep(1)
     body = driver.find_element(By.TAG_NAME, "tbody")
     time.sleep(1)
@@ -108,15 +104,12 @@ def getMultaInfo(placa, renavam, resultado, cidade, estado, proprietario, centro
 
         data_infracao = datetime.strptime(informacoesListadas[4].text.strip(), "%d/%m/%Y").date()
         data_vencimento = datetime.strptime(informacoesListadas[5].text.strip(), "%d/%m/%Y").date()
-        print(f"codigo da placa antes de registrarMultaInfo {placa}")    
         registrarMultaInfo(date.today(),placa,renavam,informacoesListadas[1].text, informacoesListadas[2].text ,informacoesListadas[3].text,data_infracao,data_vencimento, informacoesListadas[6].text, informacoesListadas[7].text, cidade, estado, proprietario, centroCusto)
-    print(f"codigo da placa antes de getVeiculoInfo {placa}")
     getVeiculoInfo(date.today(), placa, renavam, resultado, cidade, estado, proprietario, centroCusto, qttdMultas)
     time.sleep(1)
 
 #FUNÇÃO PARA REGISTRO DE MULTAS
 def registrarMultaInfo(dataDeRegistro, placa, renavam, AIT, AIToriginario , motivo, dataInfracao, dataVencimento, valor, valorAPagar, cidade, estado,proprietario, centroCusto):
-    print(f"codigo de placa dentro de registrarMultaInfo")
     dadosMulta = pd.DataFrame(
         {
             "date": [dataDeRegistro],

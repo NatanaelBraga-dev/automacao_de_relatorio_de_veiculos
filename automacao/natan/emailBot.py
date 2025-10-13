@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from variaveisDeAmbiente import username, password, baseDeVeiculos, dadosColhidosPeloBot
+    from variaveisDeAmbiente import username, password, dadosColhidosPeloBot
 
 #CONEXÃO COM SMTP
 SMTP_SERVER = "smtp.gmail.com"

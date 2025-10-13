@@ -56,13 +56,13 @@ for index, linhas in df.head(20).iterrows():  #ITERAÇÃO COM A PLANILHA DA BASE
     - centro_custo (caso não queira utilizar isso, retire as linhas do código que utilizam isso)
     - estado (caso não queira utilizar isso, retire as linhas do código que utilizam isso)
 <br>
-  - Depois disso, salve o arquivo como csv para que os dados sejam lidos corretamente, caso contrário se forem salvos como xlsx será preciso alterar a forma como o arquivo é lido.
+- Depois disso, salve o arquivo como csv para que os dados sejam lidos corretamente, caso contrário se forem salvos como xlsx será preciso alterar a forma como o arquivo é lido.
   <br>
-  - Crie também um arquivo chamado ```dadosColhidosPeloBot```, que será o arquivo que o pandas vai manipular para realizar o relatório dos dados colhidos. ``obs: esse pode ser .xlsx``
+- Crie também um arquivo chamado ```dadosColhidosPeloBot```, que será o arquivo que o pandas vai manipular para realizar o relatório dos dados colhidos. ``obs: esse pode ser .xlsx``
   <br>
-  - Após isso, crie uma pasta chamada ``baseDeDados`` dentro da pasta ``natan`` e coloque o arquivo de leitura e o arquivo ```dadosColhidosPeloBot``` dentro de ``baseDeDados``,<br> ``obs: se você quiser, você pode substituir ou renomear essa pasta "natan", desde que faça as alterações no código, ele vai funcionar corretamente``.
+- Após isso, crie uma pasta chamada ``baseDeDados`` dentro da pasta ``natan`` e coloque o arquivo de leitura e o arquivo ```dadosColhidosPeloBot``` dentro de ``baseDeDados``,<br> ``obs: se você quiser, você pode substituir ou renomear essa pasta "natan", desde que faça as alterações no código, ele vai funcionar corretamente``.
   <br>
-  - Crie um arquivo chamado ``variaveisDeAmbiente`` e dentro desse arquivo crie variaveis para armazenar os caminhos do arquivo de leitura e do arquivo que o pandas vai manipular
+- Crie um arquivo chamado ``variaveisDeAmbiente`` e dentro desse arquivo crie variaveis para armazenar os caminhos do arquivo de leitura e do arquivo que o pandas vai manipular
   <br>
 
 Ex:   

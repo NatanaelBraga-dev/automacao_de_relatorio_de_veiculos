@@ -101,5 +101,14 @@ PASSWORD = password
 from variaveisDeAmbiente import username, password, dadosColhidosPeloBot
 ```
 <br>
-
+ 
 - Após isso, basta seguir os passos que já estão comentados no próprio código para finalizar a configuração, como por exemplo os emails dos receptores.
+
+
+### TECNOLOGIAS UTILIZADAS:
+
+- Selenium
+- Regex
+- Pandas
+- Openpyxl
+- smtplib
